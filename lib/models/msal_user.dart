@@ -14,13 +14,13 @@ class MsalUser {
 
   /// Token expiration time in "MillisecondsSinceEpoch".
   final int tokenExpiresOn;
-
+  final String email;
   MsalUser({
     required this.username,
     required this.displayName,
     required this.accessToken,
     required this.tokenCreatedAt,
-    required this.tokenExpiresOn,
+    required this.tokenExpiresOn,    required this.email,
   });
 
   factory MsalUser.fromJson(Map<String, dynamic> json) {
@@ -29,7 +29,7 @@ class MsalUser {
       displayName: json['name'] ?? '',
       accessToken: json['access_token'] ?? '',
       tokenCreatedAt: json['iat'] ?? '',
-      tokenExpiresOn: json['exp'] ?? '',
+      tokenExpiresOn: json['exp'] ?? '',  email: json['email'] ?? '',
     );
   }
 
@@ -38,6 +38,6 @@ class MsalUser {
         'displayName': displayName,
         'accessToken': accessToken,
         'tokenCreatedAt': tokenCreatedAt,
-        'tokenExpiresOn': tokenExpiresOn,
+        'tokenExpiresOn': tokenExpiresOn,        'email': email,
       };
 }
