@@ -34,10 +34,10 @@ class MsalUser {
   }
 
   Map<String, dynamic>? toJson() => {
-        'username': username,
-        'displayName': displayName,
-        'accessToken': accessToken,
-        'tokenCreatedAt': tokenCreatedAt,
-        'tokenExpiresOn': tokenExpiresOn,        'email': email,
+        'preferred_username': username,
+        'name': displayName,
+        'access_token': accessToken,
+        'iat': tokenCreatedAt,
+        'exp': tokenExpiresOn,        'email': email,
       };
 }
